@@ -1,17 +1,10 @@
 Sub SaveSheetsAsCSV()
     Dim ws As Worksheet
     Dim savePath As String
-    
-    ' Specify the folder path where CSV files will be saved
     savePath = "your folder path brother/sisters"
-    
-    ' Loop through each worksheet in the workbook
     For Each ws In ThisWorkbook.Worksheets
-        ' Construct the CSV file name based on the worksheet name
         Dim csvFileName As String
         csvFileName = savePath & ws.Name & ".csv"
-        
-        ' Save the worksheet as CSV file
         ws.SaveAs Filename:=csvFileName, FileFormat:=xlCSV, CreateBackup:=False
     Next ws
     
